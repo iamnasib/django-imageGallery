@@ -1,0 +1,8 @@
+{% extends "Gallery/base.html" %} {% block title %} Signup {% endblock title%} 
+{% block content %}
+<div class="jumbotron bg-light">
+    <h4>Welcome to image gallery, <br>please login or sign up to continue</h4><br>
+    <span style="cursor:pointer;"  class="btn btn-outline-dark" onclick="location.href='{%  url 'login' %}'" >Login</span>
+    <span style="cursor:pointer;"  class="btn btn-outline-dark" onclick="location.href='{%  url 'signup' %}'"> Sign up</span>
+</div>
+{% endblock content%}

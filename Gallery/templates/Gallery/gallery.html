@@ -1,0 +1,26 @@
+{% extends "Gallery/base.html" %} {% block title %} Signup {% endblock title%} 
+{% block content %}
+<div align="center">
+{% if images%}
+{% for image in images%}
+
+<div class="card" style="width: 20rem;">
+    <h5 class="card-text mt-1">{{image.user.username}}</h5>
+    
+    <img src="{{ image.image.url}}" class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title">{{ image.title}}</h5>
+      <p class="card-text">{{ image.description}}</p>
+      <p class="card-text small text-muted">{{ image.uploaded_on}}</p>
+      <span style="cursor:pointer;"  class="card-text" onclick="location.href='{% url 'edit-image' pk=image.id %}'" >&#9999;</span>
+      
+      <span style="cursor:pointer;"  class="card-text" onclick="location.href='{% url 'delete-image' id=image.id %}'" >🗑</span>
+      
+    </div>
+  </div><br>
+  {% endfor %}
+{% else %}
+{% endif %}
+</div>
+
+{% endblock content %}
